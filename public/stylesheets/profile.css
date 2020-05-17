@@ -1,0 +1,124 @@
+body{
+    background-color:#f4e9f9	;
+}
+.navbar{
+    background-color: rgba(225,225,225,0.2);
+    border-bottom: solid 2px #ffffff;
+}
+#wrapper{
+    width:100%;
+}
+#wrapper .container{
+    max-width: 80%;
+    display:block;
+}
+.car{
+    /* position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%); */
+    width:300px;
+    min-height:400px;
+    margin:5em auto;
+    background:#fff;
+    box-shadow: 0 20px 50px rgba(0,0,0,.1);
+    border-radius:10px;
+    transition:0.5s;
+}
+.car:hover{
+    box-shadow: 0 30px 70px rgba(0,0,0,.2);
+}
+.car .box{
+    /* position:absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%); */
+    text-align:center;
+    padding:20px;
+    width:100%;
+    box-sizing:border-box;
+}
+.car .box .img{
+    width:120px;
+    height:120px;
+    margin: 0 auto;
+    border-radius: 50px;
+    overflow:hidden;
+}
+.car .box .img img{
+    width:100%;
+}
+.car .box h2{
+    font-size:20px;
+    color:#262626;
+}
+.car .box p{
+    color:#262626;
+}
+.car .box ul{
+    margin:0;
+    padding:0;
+    display:inline-block;
+}
+.car .box ul li{
+    list-style: none;
+    float:left;
+}
+.car .box ul li a{
+    display:block;
+    color:#aaa;
+    margin:0 10px;
+    font-size:20px;
+    transform: 0.5s;
+    text-align: center;
+}
+.car .box ul li:hover a{
+    color:#e91e63;
+    transform:rotateY(360deg);
+}
+#addButton{
+    background-color: white;
+    color:#3d3b70;
+    border-radius: 10px;
+    font-size:16px;
+    text-decoration: none;
+    box-shadow: 0 20px 50px rgba(0,0,0,.1);
+}
+#addButton:hover{
+    box-shadow: 0 30px 70px rgba(0,0,0,.2);
+}
+
+.right{
+    margin:5em auto;
+}
+.right .container{
+    background-color: #fff;
+    margin-bottom:3em;
+    border-radius: 10px;
+    border:1px solid rgba(255,255,255,0.4);
+}
+.right .container:hover{
+    box-shadow: inset -6px -6px 10px rgba(255,255,255,0.5),
+                inset 6px 6px 20px rgba(0,0,0,0.05);
+}
+.right .container .imgbx{
+    padding:15px 15px;
+}
+.right .container .imgbx img{
+    border-top: solid 5px white;
+    border-bottom: solid 5px white;
+    border-radius: 10px;
+}
+.right .container .imgbx img:hover{
+    box-shadow: inset -4px -4px 10px rgba(255,255,255,0.5),
+                inset 4px 4px 10px rgba(0,0,0,0.1);
+}
+.right .container .contentbx{
+    width:100%;
+    padding:15px 15px;
+}
+
+.right .container .contentbx p{
+    padding:0;
+    margin-top:12px;
+}

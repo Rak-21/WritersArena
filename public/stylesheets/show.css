@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(235, 231, 253);
+    /* background-size: cover; */
+}
+#conblur{
+    width:100%;
+    height:100%;
+}
+.card{
+    background:rgba(255,255,255,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.delete-form{
+    display:inline;
+}
+.navbar{
+    background-color: rgb(235, 231, 253);
+    border-bottom: solid 2px #ffffff;
+}
+.btn{
+    padding:1px 2px;
+    margin: auto 5px;
+}
+#commentBox{ 
+    background-color:rgba(255,255,255,0.7);
+    border:1px solid rgb(255,255,255);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+#commentBox:hover{
+    box-shadow: inset -6px -6px 10px rgba(255,255,255,0.5),
+                inset 6px 6px 20px rgba(0,0,0,0.05);
+}
+#commentButton{
+    padding:6px 8px;
+    margin:auto 0px;
+    background-color:rgba(255,255,255,0.7);
+    border:1px solid rgb(255,255,255);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#commentButton:hover{
+    box-shadow: inset -4px -4px 10px rgba(255,255,255,0.5),
+                inset 4px 4px 10px rgba(0,0,0,0.1);
+}
