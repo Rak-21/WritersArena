@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Writers Arena</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/stylesheets/profile.css">
+    </head>
+    <body>
+
+<%- include("../partials/navbar"); -%>
+
+<div id="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="car">
+                    <div class="box">
+                        <div class="img">
+                            <img src="<%=user.avatar%>" alt="user profile image">
+                        </div>
+                        <h2><%=user.firstName+" "+user.lastName%></h2>
+                        <h5 style="font-size:15px; color:grey;"><%=user.username%></h5>
+                        <p><%= user.bio %></p>
+                            <ul>
+                            <li><a href="https://<%=user.facebook%>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                             <li><a href="https://<%=user.twitter%>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                             <li><a href="mailto:<%= user.email %>"><i class="fa fa-envelope  aria-hidden="true""></i></a></li>
+                             <li><a href="https://<%=user.instagram%>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                         </ul>
+                    </div>
+                </div>
+                <% if(currentUser && user._id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
+                    <div style="text-align:center;">
+                        <a id="addButton" class="btn" href="/blogs/new">Add new Blog</a>
+                    </div>
+                <% } %>
+            </div>
+            <div class="col-lg-8 right">
+                <% blogs.forEach(function(blog){ %>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="imgbx">
+                                    <a href="/blogs/<%= blog.id %>"><img style="max-height:10rem" class="thumbnail mx-auto d-block" src="<%= blog.image %>" alt="image"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 px-0">
+                                <div class="contentbx">
+                                    <div id="tandt">
+                                        <h6 class="d-inline"><a href="/blogs/<%= blog.id %>"><%= blog.title %></a></h6>
+                                        <span class="float-right">Today</span>
+                                    </div>
+                                    <div>
+                                        <p><%= blog.content.substring(0,200) %>... <a href="/blogs/<%= blog.id %>">read more</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<%- include("../partials/footer"); -%>

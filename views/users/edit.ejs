@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Writers Arena</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/stylesheets/profileEdit.css">
+    </head>
+    <body>
+
+<%- include("../partials/navbar"); -%>
+
+
+
+<div id="userForm" class="container">
+	<div class="userDetail text-center">
+		<h2>Profile Settings</h2>
+        <form action="/users/<%= user._id %>?_method=PUT" method="POST">
+            <div class="row">
+                <div class="col-md-6" style="text-align:left;">
+                    <label style="margin-right:5px;" for="firstName">First Name: </label>
+                    <input type="text" name="user[firstName]" value="<%= user.firstName %>">
+                </div>
+                <div class="col-md-6 " style="text-align:left;">
+                    <label style="margin-right:5px;" for="lastName">Last Name: </label>
+                    <input type="text" name="user[lastName]" value="<%= user.lastName %>">
+                </div>
+            </div>
+            <hr>
+            <div class="row" style="text-align:left;">
+                <label for="bio" style="margin-right:5px;">Bio (200 characters): </label>
+                <textarea name="user[bio]" id="" cols="120" rows="2" maxlength="200"><%= user.bio %></textarea>
+            </div>
+            <hr>
+            <div class="row" style="text-align:left;">
+                <label style="margin-right:5px;" for="avatar">Profile Picture: </label>
+                <input type="text" name="user[avatar]" value="<%= user.avatar %>">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="addon-wrapping"><i style="color:#3b5998;"class="fa fa-facebook" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="text" name="user[facebook]" class="form-control" placeholder="facebook.com/username" value="<%= user.facebook %>" aria-label="facebook" aria-describedby="addon-wrapping">
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="addon-wrapping"><i style="color:#38A1F3;" class="fa fa-twitter" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="text" name="user[twitter]" class="form-control" placeholder="twitter.com/username" value="<%= user.twitter %>" aria-label="twitter" aria-describedby="addon-wrapping">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="addon-wrapping"><i style="color:#ffc838;"class="fa fa-instagram" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="text" name="user[instagram] "class="form-control" placeholder="instagram.com/username" value="<%= user.instagram %>" aria-label="instagram" aria-describedby="addon-wrapping">
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+			<div>
+				<input class="saveButton btn" type="submit" value="Save">
+			</div>
+        </form>
+        <hr>
+        <a href="/forgot" class="btn my-4">Change Password</a>
+	</div>
+</div>
+
+
+
+
+
+
+<%- include("../partials/footer"); -%>

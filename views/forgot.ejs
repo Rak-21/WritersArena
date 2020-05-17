@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Writers Arena</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/forgot.css">
+    </head>
+    <body>
+
+    
+<%- include("./partials/navbar"); -%>
+
+
+<div id="forgot" class="container">
+	<div class="forgotForm text-center">
+		<h2>Forgot Password</h2>
+		<form action="/forgot" method="POST">
+			<label for="email">Email: </label>
+			<input type="email" name="email" placeholder="abc@xyz.com">
+			<div>
+				<input class="resetButton btn" type="submit" value="Reset Password">
+			</div>
+		</form>
+	</div>
+</div>
+
+
+
+<%- include("./partials/footer"); -%>

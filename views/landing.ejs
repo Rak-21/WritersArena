@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Writers Arena</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+    </head>
+    <body>
+
+    
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+    
+    <div id="landingHeader">
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="display-3">Welcome to Writers Arena!</h1>
+            </div>
+            <div class="col-md-5">
+                <% if(!currentUser) {%>
+                <div class="loginForm">
+                    <form action="/login" method="POST">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="inputBox">
+                                    <label for="username">Username</label>
+                                    <input type="text" name="username" placeholder="username">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="inputBox">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" placeholder="***********">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:15px;">
+                            <div class="col-6" style="text-align:center;">
+                                <p class="forget">Forget Password ? <a href="/forgot">Click Here</a></p>
+                            </div>
+                            <div class="col-6">
+                                <div class="inputBox" style="text-align:center;">
+                                    <input class="btn" style="width:100px;" type="submit" value="Login">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="lowerHalf">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="container">
+                    <div class="content">
+                        <a href="/blogs">Posts</a>
+                    </div>
+                    <div class="content">
+                        <a href="/users">People</a>
+                    </div>
+                    <div class="content">
+                        <a href="/blogs/new">Add New Post</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <% if(!currentUser) {%>
+                <div class="signUpForm">
+                    <div class="su my-3">
+                        <h4 style="text-align:center;">Sign Up</h4>
+                    </div>
+                    <form action="/register" method="POST">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="inputBox">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" name="firstName" placeholder="first name">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="inputBox">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" name="lastName" placeholder="last name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inputBox">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" placeholder="abc@xyz.com">
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="inputBox">
+                                    <label for="username">Username</label>
+                                    <input type="text" name="username" placeholder="username">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="inputBox">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" placeholder="***********">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inputBox">
+                            <label for="avatar">Profile Picture: </label>
+                            <input type="text" name="avatar" placeholder="avatar url">
+                        </div>
+                        <div class="inputBox">
+                        <input class="btn" type="submit" value="Sign Up">
+                        </div>
+                    </form>
+                </div>
+            <% } %>
+            </div>
+        </div>
+    </div>
+
+
+<%- include("partials/footer"); -%>

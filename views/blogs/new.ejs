@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Writers Arena</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/newBlog.css">
+    </head>
+    <body>
+
+<%- include("../partials/navbar"); -%>
+
+
+<div id="bx">
+    <div id="addNew">
+        <h1 style="text-align:center">Add New Post</h1>
+    </div>
+    <form action="/blogs" method="POST">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 left">
+                    <div class="inputBox">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" placeholder="Title">
+                    </div>
+                    <div class="inputBox">
+                        <label for="image">Image Url</label>
+                        <input type="text" name="image" placeholder="image url">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="inputBox">
+                        <label for="content">Content</label>
+                        <textarea name="content" id="" cols="50" rows="10">Add your Text Here</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Submit !">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+        <h1 style="text-align:center">Add New Post</h1>
+        <div style="width:30%; margin:25px auto">
+            <form action="/blogs" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="image" placeholder="image url">
+                </div>
+                <div class="form-group">
+                    <textarea name="content" id="" cols="50" rows="10"></textarea>
+                    <input class="form-control" type="text" name="content" placeholder="Content">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-block btn-lg btn-primary">Submit!</button>
+                </div>
+            </form>
+            <a href="/blogs">Go Back</a>
+        </div>
+    </div>
+</div> -->
+
+<%- include("../partials/footer"); -%>

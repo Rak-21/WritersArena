@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Writers Arena</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/index.css">
+    </head>
+    <body>
+
+<%- include("../partials/navbar"); -%>
+
+
+
+    <div class="jumbotron">
+        <div>
+            <% if(currentUser && currentUser.isAdmin) {%>
+                <h3>You are an Admin!</h3>
+            <% } %>
+        </div>
+        <div class="container">
+            <div class="row align-items-center content" style="margin : auto auto;">
+                <div class="col-sm-4 order-2 order-md-1">
+                    <div style="text-align:center;">
+                        <a id="addButton" class="btn" href="/blogs/new">Add new Blog</a>
+                    </div>
+                </div>
+                <div class="col-sm-8 order-1 order-md-2">
+                    <div class="mx-auto">
+                        <form action="/blogs" method="GET">
+                            <div class="input-group">
+                                <input id="searchBox" type="text" name="search" placeholder="search" class="form-control">
+                                <div class="input-group-append">
+                                    <input id="searchButton" type="submit" value="Search" class="btn">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<div id="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <% if(noMatch !== null){%>
+                    <h3><%= noMatch %></h3>
+                <% } %>
+            </div>
+            <% blogs.forEach(function(blog){ %>
+                <div class="col-sm-6 col-md-4 col-lg-3 p-0 p-lg-3">
+                        <div class="card">
+                            <div class="imgBx">
+                                <a href="/blogs/<%= blog._id%>">
+                                    <img style="max-height:10rem"class="thumbnail mx-auto d-block" src="<%= blog.image %>" alt="">
+                                </a>
+                            </div>
+                            <div class="contentBx">
+                                <h2 class="text-center"><%= blog.title %></h2>
+                                <p><%= blog.content.substring(0,100) %>...</p>
+                                <a href="/blogs/<%= blog._id%>"><span>Read More</span></a>
+                            </div>
+                        </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<%- include("../partials/footer"); -%>

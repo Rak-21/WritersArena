@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Writers Arena</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/register.css">
+    </head>
+    <body>
+
+<%- include("./partials/navbar"); -%>
+
+
+<div class="signupForm">
+    
+    <div class="title"><h2>Sign Up!</h2></div>
+
+    <form action="/register" method="POST">
+        <div class="inputBox">
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="username">
+        </div>
+        <div class="inputBox">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="***********">
+        </div>
+        <div class="inputBox">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" placeholder="first name">
+        </div>
+        <div class="inputBox">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" placeholder="last name">
+        </div>
+        <div class="inputBox">
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="abc@xyz.com">
+        </div>
+        <div class="inputBox">
+            <label for="avatar">Profile Picture: </label>
+            <input type="text" name="avatar" placeholder="avatar url">
+        </div>
+        <!-- <div class="inputBox">
+            <label for="adminCode">Admin Code</label>
+            <input type="password" name="adminCode" placeholder="admin code">
+        </div> -->
+        <div class="inputBox">
+            <input type="submit" value="Sign Up!">
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<%- include("./partials/footer"); -%>

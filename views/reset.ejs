@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Writers Arena</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/reset.css">
+    </head>
+    <body>
+
+    
+<%- include("./partials/navbar"); -%>
+
+<div id:"reset" class="container">
+	<div class="forgotForm text-center">
+		<h2>Reset Password</h2>
+		<form action="/reset/<%= token %>" method="POST">
+			<div>
+				<label for="password">New Password</label>
+				<input type="password" name="password" value="" placeholder="New password"/>
+			</div>
+			<div>
+				<label for="confirm">Confirm Password</label>
+		    	<input type="password" name="confirm" value="" placeholder="Confirm password"/>
+			</div>
+			<div>
+				<input class="btn" type="submit" value="Update Password">
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<!-- <div class="row">
+	<div class="col-md-12">
+		<form action="/reset/<%= token %>" method="POST">
+		  <legend>Reset Password</legend>
+		  <div class="form-group">
+		    <label for="password">New Password</label>
+		    <input type="password" name="password" value="" placeholder="New password" autofocus="autofocus" class="form-control"/>
+		  </div>
+		  <div class="form-group">
+		    <label for="confirm">Confirm Password</label>
+		    <input type="password" name="confirm" value="" placeholder="Confirm password" class="form-control"/>
+		  </div>
+		  <div class="form-group">
+		    <button type="submit" class="btn btn-primary">Update Password</button>
+		  </div>
+		</form>
+	</div>
+</div> -->
+
+
+<%- include("./partials/footer"); -%>
